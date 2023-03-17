@@ -8,8 +8,7 @@ const BookDetails = () => {
   const [Book, Usebook] = useState([]);
   const BookData = async () => {
     try {
-      const data = await axios.get("/books",
-      { headers: {"x-api-key" : `${localStorage.getItem('token')}`} });
+      const data = await axios.get("http://localhost:3001/books");
       Usebook(data.data.data);
     } catch (e) {
       window.alert("Please log-in");

@@ -12,8 +12,7 @@ const ReadBook = (props) => {
   const BookDetails = async ()=>{
    try{
     if(User){
-    const book = await axios.get(`/books/${User}`,
-   {headers: {"x-api-key" : `${localStorage.getItem('token')}`}})
+    const book = await axios.get(`/books/${User}`)
    setbooks(book.data.data)
    setReviews(book.data.data.reviewsData)
    console.log(book.data.data.reviewsData)
